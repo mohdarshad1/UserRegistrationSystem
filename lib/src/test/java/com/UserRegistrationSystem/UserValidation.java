@@ -53,7 +53,7 @@ public class UserValidation {
     public void testPassword(){
 
         boolean isValid;
-        isValid = user.checkPassword("arshAd12hty");
+        isValid = user.checkPassword("arshAd12@hty");
         System.out.println(isValid);
         Assert.assertTrue(isValid);
 
