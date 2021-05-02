@@ -7,6 +7,7 @@ import org.junit.Test;
 public class UserValidation {
 
     UserRegistration user;
+    boolean result;
 
     @Before
     public void setup(){
@@ -14,47 +15,73 @@ public class UserValidation {
     }
     
     @Test
-    public void testFirstName(){
-
-        boolean isValid;
-        isValid = user.checkFirstName("Mohd");
-        System.out.println(isValid);
-        Assert.assertTrue(isValid);
+    public void testFirstNameHappy(){
+        result = user.checkFirstName("Krishna");
+        System.out.println(result);
+        Assert.assertTrue(result);
     }
     
     @Test
-    public void testLastName(){
+    public void testFirstNameSad(){
+        result = user.checkFirstName("Kr");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
 
-        boolean isValid;
-        isValid = user.checkLastName("Arshad");
-        System.out.println(isValid);
-        Assert.assertTrue(isValid);
+    @Test
+    public void testLastNameHappy(){
+        result = user.checkLastName("Krishna");
+        System.out.println(result);
+        Assert.assertTrue(result);
     }
     
     @Test
-    public void testEmail(){
+    public void testLastNameSad(){
+        result = user.checkLastName("Kr");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
 
-        boolean isValid;
-        isValid = user.checkEmail("mdarshad@gmail.com");
-        System.out.println(isValid);
-        Assert.assertTrue(isValid);
+    @Test
+    public void testEmailHappy(){
+        result = user.checkEmail("Krishna@gmail.com");
+        System.out.println(result);
+        Assert.assertTrue(result);
     }
     
     @Test
-    public void testMobileNum(){
-
-        boolean isValid;
-        isValid = user.checkMobileNum("91 9717704916");
-        System.out.println(isValid);
-        Assert.assertTrue(isValid);
+    public void testEmailSad(){
+        result = user.checkEmail("Krishnagmail.com");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
+  
+    @Test
+    public void testMobileNumHappy() {
+        result = user.checkMobileNum("7569918165");
+        System.out.println(result);
+        Assert.assertTrue(result);
     }
     
     @Test
-    public void testPassword(){
-
-        boolean isValid;
-        isValid = user.checkPassword("arshAd12@hty");
-        System.out.println(isValid);
-        Assert.assertTrue(isValid);
+    public void testMobileNumSad() {
+        result = user.checkMobileNum("007569918165");
+        System.out.println(result);
+        Assert.assertFalse(result);
     }
+
+    @Test
+    public void testPasswordHappy() {
+        result = user.checkPassword("krishna123AS@asD");
+        System.out.println(result);
+        Assert.assertTrue(result);
+    }
+    
+    @Test
+    public void testPasswordSad() {
+        result = user.checkPassword("krishna123A@@SasD");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
+
 }
