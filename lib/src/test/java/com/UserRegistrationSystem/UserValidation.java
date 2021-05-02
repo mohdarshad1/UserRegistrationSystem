@@ -16,70 +16,70 @@ public class UserValidation {
     
     @Test
     public void testFirstNameHappy(){
-        result = user.checkFirstName("Krishna");
+        result = user.checkFirstName("Arshad");
         System.out.println(result);
         Assert.assertTrue(result);
     }
     
     @Test
     public void testFirstNameSad(){
-        result = user.checkFirstName("Kr");
+        result = user.checkFirstName("Ar");
         System.out.println(result);
         Assert.assertFalse(result);
     }
 
     @Test
     public void testLastNameHappy(){
-        result = user.checkLastName("Krishna");
+        result = user.checkLastName("Arshad");
         System.out.println(result);
         Assert.assertTrue(result);
     }
     
     @Test
     public void testLastNameSad(){
-        result = user.checkLastName("Kr");
+        result = user.checkLastName("Ar");
         System.out.println(result);
         Assert.assertFalse(result);
     }
 
     @Test
     public void testEmailHappy(){
-        result = user.checkEmail("Krishna@gmail.com");
+        result = user.checkEmail("arshad@gmail.com");
         System.out.println(result);
         Assert.assertTrue(result);
     }
     
     @Test
     public void testEmailSad(){
-        result = user.checkEmail("Krishnagmail.com");
+        result = user.checkEmail("arshadgmail.com");
         System.out.println(result);
         Assert.assertFalse(result);
     }
   
     @Test
     public void testMobileNumHappy() {
-        result = user.checkMobileNum("7569918165");
+        result = user.checkMobileNum("9717704916");
         System.out.println(result);
         Assert.assertTrue(result);
     }
     
     @Test
     public void testMobileNumSad() {
-        result = user.checkMobileNum("007569918165");
+        result = user.checkMobileNum("009717704916");
         System.out.println(result);
         Assert.assertFalse(result);
     }
 
     @Test
     public void testPasswordHappy() {
-        result = user.checkPassword("krishna123AS@asD");
+        result = user.checkPassword("arshad123AS@asD");
         System.out.println(result);
         Assert.assertTrue(result);
     }
     
     @Test
     public void testPasswordSad() {
-        result = user.checkPassword("krishna123A@@SasD");
+        result = user.checkPassword("Arshad123A@@SasD");
         System.out.println(result);
         Assert.assertFalse(result);
     }
