@@ -56,6 +56,5 @@ public class UserValidation {
         isValid = user.checkPassword("arshAd12@hty");
         System.out.println(isValid);
         Assert.assertTrue(isValid);
-
     }
 }

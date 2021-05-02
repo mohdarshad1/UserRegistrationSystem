@@ -11,35 +11,51 @@ public class UserRegistration {
     private static String userPassword = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,}";
     
     public boolean checkFirstName(String firstName){
-
         Pattern p = Pattern.compile(firstName);
         return Pattern.matches(first_Name, firstName);
 
     }
     
     public boolean checkLastName(String lastName){
-
         Pattern p = Pattern.compile(lastName);
         return Pattern.matches(last_Name, lastName);
 
     }
     
     public boolean checkEmail(String email){
-
         Pattern p = Pattern.compile(email);
         return Pattern.matches(emailID, email);
     }
     
     public boolean checkMobileNum(String mobileNum){
-
         Pattern p = Pattern.compile(mobileNum);
         return Pattern.matches(mobile, mobileNum);
     }
     
     public boolean checkPassword(String password){
-
         Pattern p = Pattern.compile(password);
         return Pattern.matches(userPassword, password);
+    }
+    
+    public static void main( String[] args )
+    {
+    	UserRegistration userObject=new UserRegistration();
+    	userObject.checkEmail("abc@yahoo.com");
+		userObject.checkEmail("abc-100@yahoo.com");
+		userObject.checkEmail("abc.100@yahoo.com");
+		userObject.checkEmail("abc111@abc.com");
+		userObject.checkEmail("abc-100@abc.net");
+		userObject.checkEmail("abc.100@abc.com.au");
+		userObject.checkEmail("abc@1.com");
+		userObject.checkEmail("abc@gmail.com.com");
+		userObject.checkEmail("abc+100@gmail.com");
+		userObject.checkEmail("abc");
+		userObject.checkEmail("abc@.com.my");
+		userObject.checkEmail("abc123@gmail.a");
+		userObject.checkEmail("abc123@.com");
+		userObject.checkEmail("abc123@.com.com");
+		userObject.checkEmail(".abc@abc.com");
+		userObject.checkEmail("abc()*@gmail.com");   	     
     }
 
 }
