@@ -48,4 +48,14 @@ public class UserValidation {
         System.out.println(isValid);
         Assert.assertTrue(isValid);
     }
+    
+    @Test
+    public void testPassword(){
+
+        boolean isValid;
+        isValid = user.checkPassword("arshadhty");
+        System.out.println(isValid);
+        Assert.assertTrue(isValid);
+
+    }
 }
