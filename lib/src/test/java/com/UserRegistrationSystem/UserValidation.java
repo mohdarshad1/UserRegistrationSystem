@@ -8,6 +8,7 @@ public class UserValidation {
 
     UserRegistration user;
     boolean result;
+    String[] allEmails;
 
     @Before
     public void setup(){
@@ -84,4 +85,36 @@ public class UserValidation {
         Assert.assertFalse(result);
     }
 
+    @Test
+    public void testAllEmailsHappy() {
+
+         allEmails = new String[]{"abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com",
+                                    "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com",
+                                        "abc+100@gmail.com"};
+
+
+        for (String emailIDs: allEmails) {
+
+            result = user.checkEmail(emailIDs);
+            System.out.println(result);
+            Assert.assertTrue(result);
+
+        }
+    }
+
+    @Test
+    public void testAllInValidEmails() {
+
+        allEmails = new String[]{"abc", "abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com",
+                                    ".abc@abc.com", "abc()*@gmail.com", "abc@%*.com", "abc..2002@gmail.com",
+                                    "abc.@gmail.com", "abc@abc@gmail.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au"};
+
+        for (String emailIDs: allEmails) {
+
+            result = user.checkEmail(emailIDs);
+            System.out.println(result);
+            Assert.assertFalse(result);
+
+        }
+    }
 }
