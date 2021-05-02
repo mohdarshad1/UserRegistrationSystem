@@ -12,6 +12,7 @@ public class UserValidation {
     public void setup(){
         user = new UserRegistration();
     }
+    
     @Test
     public void testFirstName(){
 
@@ -26,6 +27,15 @@ public class UserValidation {
 
         boolean isValid;
         isValid = user.checkLastName("Arshad");
+        System.out.println(isValid);
+        Assert.assertTrue(isValid);
+    }
+    
+    @Test
+    public void testEmail(){
+
+        boolean isValid;
+        isValid = user.checkEmail("Mdarshad@gmail.com");
         System.out.println(isValid);
         Assert.assertTrue(isValid);
     }
