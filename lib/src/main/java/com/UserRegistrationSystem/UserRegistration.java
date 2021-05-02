@@ -8,7 +8,7 @@ public class UserRegistration {
     private static String last_Name = "[A-Z]{1}[a-z]{2,}";
     private static String emailID = "[a-zA-z0-9]+[a-zA-Z0-9-_[+]?]*[.]?[a-zA-Z0-9-_[+]?]*@[a-zA-Z0-9]+([.][a-zA-Z]{2,}){1,2}";
     private static String mobile = "([0-9]{2}[ ]|0)?[6-9][0-9]{9}";
-    private static String userPassword = "[a-z]{8,}";
+    private static String userPassword = "(?=.*[a-z])(?=.*[A-Z]).{8,}";
     
     public boolean checkFirstName(String firstName){
 
