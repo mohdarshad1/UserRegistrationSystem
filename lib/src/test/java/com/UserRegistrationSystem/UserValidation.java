@@ -10,21 +10,23 @@ public class UserValidation {
 
     @Before
     public void setup(){
-
         user = new UserRegistration();
-
     }
     @Test
     public void testFirstName(){
 
         boolean isValid;
-
         isValid = user.checkFirstName("Mohd");
-
         System.out.println(isValid);
-
         Assert.assertTrue(isValid);
-
     }
+    
+    @Test
+    public void testLastName(){
 
+        boolean isValid;
+        isValid = user.checkLastName("Arshad");
+        System.out.println(isValid);
+        Assert.assertTrue(isValid);
+    }
 }
