@@ -35,7 +35,16 @@ public class UserValidation {
     public void testEmail(){
 
         boolean isValid;
-        isValid = user.checkEmail("Mdarshad@gmail.com");
+        isValid = user.checkEmail("mdarshad@gmail.com");
+        System.out.println(isValid);
+        Assert.assertTrue(isValid);
+    }
+    
+    @Test
+    public void testMobileNum(){
+
+        boolean isValid;
+        isValid = user.checkMobileNum("91 9717704916");
         System.out.println(isValid);
         Assert.assertTrue(isValid);
     }

@@ -7,6 +7,7 @@ public class UserRegistration {
     private static String first_Name = "[A-Z]{1}[a-z]{2,}";
     private static String last_Name = "[A-Z]{1}[a-z]{2,}";
     private static String emailID = "[a-zA-z0-9]+[a-zA-Z0-9-_[+]?]*[.]?[a-zA-Z0-9-_[+]?]*@[a-zA-Z0-9]+([.][a-zA-Z]{2,}){1,2}";
+    private static String mobile = "([0-9]{2}[ ]|0)?[6-9][0-9]{9}";
 
     public boolean checkFirstName(String firstName){
 
@@ -26,5 +27,11 @@ public class UserRegistration {
 
         Pattern p = Pattern.compile(email);
         return Pattern.matches(emailID, email);
+    }
+    
+    public boolean checkMobileNum(String mobileNum){
+
+        Pattern p = Pattern.compile(mobileNum);
+        return Pattern.matches(mobile, mobileNum);
     }
 }
